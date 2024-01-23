@@ -27,7 +27,7 @@ export default function HomepageGallery({ genere }) {
         <div className="row">
             <div className="col-10"></div>
             <div id={genre.toLowerCase()} className="pt-2">
-                <h2 className="ms-4 ps-2">{genre}</h2>
+                <h2 className="ms-2 ps-2">{genre}</h2>
                 <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks m-0 my-3" id="hipHopSection">
                     {data.slice(0, 4).map((item) => (
                         <div className="col text-center" key={item.id}>
