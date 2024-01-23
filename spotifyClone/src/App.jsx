@@ -6,7 +6,7 @@ import { Container, Row } from 'react-bootstrap';
 import MyNavbar from './components/MyNavbar';
 import MyPlayer from './components/MyPlayer';
 import AlbumPage from './pages/AlbumPage'
-// import ArtistPage from './pages/ArtistPage'
+import ArtistPage from './pages/ArtistPage'
 
 function App() {
 
@@ -17,8 +17,8 @@ function App() {
           <MyNavbar />
           <Routes>
             <Route path="/" element={<Homepage />} />
-            <Route path="/album/:id" element={<AlbumPage />} />
-        {/* <Route path="/" element={<ArtistPage />} /> */}
+            <Route path="/album/:albumId" element={<AlbumPage />} />
+            <Route path="/artist/:artistId" element={<ArtistPage />} />
           </Routes>
           <MyPlayer />
         </Row>

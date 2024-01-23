@@ -4,9 +4,7 @@ import axios from 'axios'
 
 export default function HomepageGallery({ genere }) {
     const [data, setData] = useState([]);
-
     let genre = genere;
-    console.log(genre);
 
     const options = {
         method: 'GET',
@@ -24,7 +22,6 @@ export default function HomepageGallery({ genere }) {
             });
     }, []);
 
-
     return (
 
         <div className="row">
@@ -38,12 +35,13 @@ export default function HomepageGallery({ genere }) {
                                 <img className="img-fluid" src={item.album.cover_medium} alt="1" />
                             </Link>
                             <p>
-                                <a href="/album_page.html?id=51350192">
+                                <Link to={`/album/${item.album.id}`}>
                                     Album: {item.album.title}<br />
-                                </a>
-                                <a href="/artist_page.html?id=210">
+                                </Link>
+
+                                <Link to={`/artist/${item.artist.id}`}>
                                     Artist: {item.artist.name}
-                                </a>
+                                </Link>
                             </p>
                         </div>
                     ))}

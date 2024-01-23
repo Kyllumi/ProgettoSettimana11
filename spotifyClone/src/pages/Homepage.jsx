@@ -3,7 +3,7 @@ import HomepageGallery from "../components/HomepageGallery"
 export default function Homepage() {
 
     return (
-        <div className="col-10 mainPage mb-5">
+        <div className="col-10 col-md-9 offset-md-3 mainPage ms-2">
             <div className="row d-flex justify-content-center">
                 <div className="col-9 col-lg-11 mainLinks d-none d-md-flex">
                     <a href="#a">TRENDING</a>
