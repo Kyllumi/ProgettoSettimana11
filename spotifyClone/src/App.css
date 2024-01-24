@@ -241,9 +241,7 @@ ul {
   padding-bottom: 5rem;
 }
 
-.miaHomepage,
-.mioAlbumpage,
-.mioArtistpage, .mioResultspage {
+.myAppG {
   overflow: hidden;
   a{
     cursor: pointer;

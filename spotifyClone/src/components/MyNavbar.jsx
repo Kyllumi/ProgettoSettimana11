@@ -10,7 +10,7 @@ export default function MyNavbar() {
     const handleSubmit = (e) => {
         if (e.key === 'Enter') {
             e.preventDefault();
-            navigate(`/results/${search}`);
+            // navigate(`/results/${search}`);
             setSearch("");
             e.target.value = "";
         }
@@ -18,9 +18,14 @@ export default function MyNavbar() {
 
     const handleSubmit2 = (e) => {
         e.preventDefault();
-        navigate(`/results/${search}`);
+        // navigate(`/results/${search}`);
         setSearch("");
         e.target.value = "";
+    }
+
+    const handleChange = (e) => {
+        navigate(`/results/${e.target.value}`);
+        setSearch(e.target.value);
     }
 
     return (
@@ -45,7 +50,7 @@ export default function MyNavbar() {
                                         <i className="fas fa-book-open fa-lg" /> Your Library </NavLink>
                                 </li>
                                 <InputGroup className="input-group mt-3 px-3">
-                                    <input type="text" className="form-control mb-2" id="searchField" placeholder="Cerca" aria-label="Search" aria-describedby="basic-addon2" onChange={(e) => setSearch(e.target.value)} onKeyDown={handleSubmit} />
+                                    <input type="text" className="form-control mb-2" id="searchField" placeholder="Cerca" aria-label="Search" aria-describedby="basic-addon2" onChange={handleChange} onKeyDown={handleSubmit} />
                                     <div style={{ marginBottom: "4%" }}>
                                         <button className="btn btn-outline-secondary btn-sm h-100" type="button" onClick={handleSubmit2}> GO </button>
                                     </div>

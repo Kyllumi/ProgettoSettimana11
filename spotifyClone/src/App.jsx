@@ -13,7 +13,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Row>
+      <Row className="myAppG">
         <MyNavbar />
         <Routes>
           <Route path="/" element={<Homepage />} />
