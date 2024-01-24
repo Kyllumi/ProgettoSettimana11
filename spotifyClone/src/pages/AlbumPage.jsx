@@ -4,11 +4,11 @@ import { useEffect, useState } from 'react';
 import MyNavbar from '../components/MyNavbar';
 import MyPlayer from '../components/MyPlayer';
 import { Row } from 'react-bootstrap';
+import { PlusCircle } from "react-bootstrap-icons";
 
 export default function AlbumPage() {
     const [album, setAlbum] = useState({});
     const { albumId } = useParams();
-    console.log(albumId);
 
     const options = {
         method: 'GET',
@@ -54,16 +54,14 @@ export default function AlbumPage() {
                             <button id="btnPlay" className="btn btn-success" type="button">Play</button>
                         </div>
                     </div>
-                    <div className="col-md-8 p-5 pe-0">
-                        <div className="row">
-                            <div className="col-md-10 mb-5" id="trackList">
+                    <div className="col-md-8 p-5 ps-5">
+                        <div className="row ">
+                            <div className="col-md-10 mb-5 ps-0" id="trackList">
                                 {album.tracks ? album.tracks.data.map((track) => (
-                                    <div className="py-3 trackHover" key={track.id}>
-                                        <a href="#" className="card-title trackHover px-3" style={{ color: 'white' }}>{track.title}</a>
-                                        <small className="duration pe-2" style={{ color: 'white' }}>{Math.floor(
-                                            parseInt(track.duration) / 60 // setting the duration minutes
-                                        )}:{parseInt(track.duration) % 60 < 10 ? "0" + (parseInt(track.duration) % 60) : parseInt(track.duration) % 60
-                                            }</small>
+                                    <div className="row py-3 trackHover align-items-center" key={track.id}>
+                                        <a href="#" className="col-9 card-title trackHover" style={{ color: 'white' }} onClick={() => console.log('passo i dati')}>{track.title}</a>
+                                        <a className="duration col" style={{ color: 'white' }}>{Math.floor(parseInt(track.duration) / 60)}:{parseInt(track.duration) % 60 < 10 ? "0" + (parseInt(track.duration) % 60) : parseInt(track.duration) % 60}</a>
+                                        <PlusCircle className='col-1 text-white myFavTrack' onClick={() => console.log('click')} />
                                     </div>
                                 )) : <p>Loading...</p>}
                             </div>
