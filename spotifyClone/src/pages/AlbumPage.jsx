@@ -55,8 +55,8 @@ export default function AlbumPage() {
                     <div className="row ">
                         <div className="col-md-10 mb-5 ps-0" id="trackList">
                             {album.tracks ? album.tracks.data.map((track) => (
-                                <div className="row py-3 trackHover align-items-center" key={track.id}>
-                                    <a className="col-9 card-title trackHover" style={{ color: 'white' }} onClick={() => dispatch(setSong(track))}>{track.title}</a>
+                                <div className="row py-2 trackHover align-items-center py-2" key={track.id}>
+                                    <a className="col-9 card-title trackHover py-2" style={{ color: 'white' }} onClick={() => dispatch(setSong(track))}>{track.title}</a>
                                     <a className="duration col" style={{ color: 'white' }}>{Math.floor(parseInt(track.duration) / 60)}:{parseInt(track.duration) % 60 < 10 ? "0" + (parseInt(track.duration) % 60) : parseInt(track.duration) % 60}</a>
                                     <PlusCircle className='col-1 text-white myFavTrack' onClick={() => console.log('click')} />
                                 </div>
