@@ -91,21 +91,19 @@ ul {
 .bg-container {
   height: 5.5rem;
   background-color: #282828;
+  margin-left: 230px;
 }
 
-.playerControls .row {
-  justify-content: center;
-}
-
-.playerControls a img {
-  width: 14px;
+.playerControls div img,
+.playerControls div .i {
+  width: 1.4rem;
   margin-top: 1rem;
   filter: brightness(60%);
 }
 
 .playerControls a:hover {
   filter: brightness(80%);
-  color: #282828 !important;
+  color: #292929 !important;
 }
 
 .progress {
@@ -243,7 +241,21 @@ ul {
 
 .myAppG {
   overflow: hidden;
-  a{
+
+  a {
     cursor: pointer;
   }
+}
+
+.songName,
+.songArtist {
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.songArtist {
+  font-size: 0.8rem;
+  color: rgb(160, 160, 160);
 }

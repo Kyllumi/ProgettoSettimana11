@@ -1,18 +1,14 @@
-import { SET_DATA } from '../store/action';
+export default function storeReducer(state = [], action) {
 
-const initialState = {
-    rock: [],
-    pop: [],
-    hipHop: []
-};
+    console.log(action)
 
-const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case SET_DATA:
-            return { ...state, [action.payload.genre]: action.payload.data };
-        default:
-            return state;
-    }
-};
+        case 'SET_SONG':
+            return [action.payload]
 
-export default reducer;
+        default:
+            break;
+    }
+
+    return state;
+}

@@ -2,10 +2,13 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { PlusCircle } from "react-bootstrap-icons";
+import { useDispatch } from 'react-redux';
+import { setSong } from '../store/action';
 
 export default function AlbumPage() {
     const [album, setAlbum] = useState({});
     const { albumId } = useParams();
+    const dispatch = useDispatch();
 
     const options = {
         method: 'GET',
@@ -53,7 +56,7 @@ export default function AlbumPage() {
                         <div className="col-md-10 mb-5 ps-0" id="trackList">
                             {album.tracks ? album.tracks.data.map((track) => (
                                 <div className="row py-3 trackHover align-items-center" key={track.id}>
-                                    <a href="#" className="col-9 card-title trackHover" style={{ color: 'white' }} onClick={() => console.log('passo i dati')}>{track.title}</a>
+                                    <a className="col-9 card-title trackHover" style={{ color: 'white' }} onClick={() => dispatch(setSong(track))}>{track.title}</a>
                                     <a className="duration col" style={{ color: 'white' }}>{Math.floor(parseInt(track.duration) / 60)}:{parseInt(track.duration) % 60 < 10 ? "0" + (parseInt(track.duration) % 60) : parseInt(track.duration) % 60}</a>
                                     <PlusCircle className='col-1 text-white myFavTrack' onClick={() => console.log('click')} />
                                 </div>

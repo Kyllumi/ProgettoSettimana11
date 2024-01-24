@@ -1,6 +1,3 @@
-export const SET_DATA = 'SET_DATA';
-
-export const setData = (genre, data) => ({
-    type: SET_DATA,
-    payload: { genre, data }
-});
+export const setSong = (favSong) => (
+    { type: 'SET_SONG', payload: favSong }
+);
