@@ -2,9 +2,6 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import MyPlayer from '../components/MyPlayer';
-import MyNavbar from '../components/MyNavbar';
-import { Row } from 'react-bootstrap';
 
 export default function ArtistPage() {
     const [artist, setArtist] = useState({});
@@ -43,9 +40,6 @@ export default function ArtistPage() {
     }, []);
 
     return (
-        <Row className="mioArtistpage">
-            <MyNavbar />
-
             <div className="col-12 col-md-9 offset-md-3 mainPage ms-4">
                 <div className="row mb-3">
                     <div className="col-9 col-lg-11 mainLinks d-none d-md-flex">
@@ -100,7 +94,5 @@ export default function ArtistPage() {
                     </div>
                 </div>
             </div>
-            <MyPlayer />
-        </Row>
     )
 }
