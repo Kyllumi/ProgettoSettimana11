@@ -72,7 +72,7 @@ export default function ArtistPage() {
                     <div className="pt-5 mb-5">
                         <div className="row" id="apiLoaded">
                             {artistAlbums.map((item) => (
-                                <div className="col-6 col-md-4 col-lg-3 text-center" key={item.id}>
+                                <div className="col-6 col-md-4 col-lg-3 text-center imgLinks" key={item.id}>
                                     <Link to={`/album/${item.album.id}`}>
                                         <img className="img-fluid " src={item.album.cover_medium} alt="1" style={{ width: '100%' }} />
                                     </Link>

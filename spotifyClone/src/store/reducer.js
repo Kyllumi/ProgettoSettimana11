@@ -1,14 +1,17 @@
-export default function storeReducer(state = [], action) {
+const initialState = {
+    favTrack: [],
+    playingSong: [],
+};
 
-    console.log(action)
-
+export default function storeReducer(state = initialState, action) {
     switch (action.type) {
         case 'SET_SONG':
-            return [action.payload]
-
+            return { ...state, playingSong: [action.payload] }
+        case 'ADD_FAV':
+            return { ...state, favTrack: [...state.favTrack, action.payload] }
+        case 'REMOVE_FAV':
+            return { ...state, favTrack: state.favTrack.filter(track => track.id !== action.payload) }
         default:
-            break;
+            return state;
     }
-
-    return state;
 }

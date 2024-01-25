@@ -1,20 +1,19 @@
 body {
   background: rgb(46, 63, 87);
-  background: linear-gradient(90deg,
-      rgb(63, 86, 119) 0%,
-      rgba(33, 44, 61, 1) 42%,
-      rgb(15, 21, 29) 100%);
+  background: linear-gradient(90deg, rgb(63, 86, 119) 0%, rgba(33, 44, 61, 1) 42%, rgb(15, 21, 29) 100%);
   overflow-x: hidden;
+  width: 100%;
 }
 
-/*SIDEBAR*/
+/* SIDEBAR */
 .navbar.fixed-left {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  width: 230px;
+  width: 14.375rem;
+  /* 230px */
   flex-flow: column nowrap;
   align-items: flex-start;
   justify-content: space-between;
@@ -23,17 +22,19 @@ body {
 }
 
 .navbar.fixed-left .navbar-collapse .navbar-nav a {
-  color: rgb(145, 145, 145) !important;
+  color: rgb(145, 145, 145);
   transition: 0.3s;
 }
 
 .navbar.fixed-left .navbar-collapse .navbar-nav a:hover {
-  color: white !important;
+  color: white;
 }
 
 .navbar.fixed-left .navbar-brand {
-  padding-top: 20px;
-  padding-bottom: 30px;
+  padding-top: 1.25rem;
+  /* 20px */
+  padding-bottom: 1.875rem;
+  /* 30px */
 }
 
 ul {
@@ -41,7 +42,8 @@ ul {
 }
 
 .nav-btn {
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+  /* 20px */
   text-align: center;
 }
 
@@ -54,10 +56,13 @@ ul {
   background-color: white;
   color: black;
   border: 1px solid white;
-  border-radius: 20px;
+  border-radius: 1.25rem;
+  /* 20px */
   width: 80%;
-  margin-bottom: 20px;
-  padding: 0.5rem;
+  margin-bottom: 1.25rem;
+  /* 20px */
+  padding: 0.3125rem;
+  /* 5px */
 }
 
 .signup-btn:hover {
@@ -70,10 +75,13 @@ ul {
   background-color: black;
   color: white;
   border: 1px solid white;
-  border-radius: 20px;
+  border-radius: 1.25rem;
+  /* 20px */
   width: 80%;
-  margin-bottom: 20px;
-  padding: 0.5rem;
+  margin-bottom: 1.25rem;
+  /* 20px */
+  padding: 0.3125rem;
+  /* 5px */
 }
 
 .login-btn:hover {
@@ -81,17 +89,19 @@ ul {
   background-color: white;
 }
 
-@media screen and (max-width: 936px) {
+@media screen and (max-width: 58.5rem) {
+
+  /* 936px */
   #sidebar {
     display: none;
   }
 }
 
-/* BOTTOM PLAYER SECTION*/
+/* BOTTOM PLAYER SECTION */
 .bg-container {
   height: 5.5rem;
   background-color: #282828;
-  margin-left: 230px;
+  margin-right: 1rem;
 }
 
 .playerControls div img,
@@ -101,23 +111,29 @@ ul {
   filter: brightness(60%);
 }
 
+.playerControls div img:hover,
+.playerControls div .i:hover {
+  filter: brightness(100%);
+}
+
 .playerControls a:hover {
   filter: brightness(80%);
-  color: #292929 !important;
+  color: #292929;
 }
 
 .progress {
   color: white;
   background-color: #414141;
   --bs-progress-height: 0.3rem !important;
+  width: 90%;
 }
 
 .playBar p {
-  margin-bottom: 20px;
+  margin-bottom: 1.5rem;
   color: white;
 }
 
-/*MAIN PAGE SECTION*/
+/* MAIN PAGE SECTION */
 .mainPage h2 {
   text-decoration: none;
 }
@@ -130,7 +146,8 @@ ul {
 .mainLinks a {
   color: white;
   font-weight: 700;
-  font-size: 12px;
+  font-size: 0.75rem;
+  /* 12px */
   opacity: 0.3;
   text-decoration: none;
   margin: 2rem 0.5rem 0.5rem 0.5rem;
@@ -144,8 +161,10 @@ ul {
 
 .imgLinks a p,
 .mainPage p a {
-  padding-top: 8px;
-  font-size: 12px;
+  padding-top: 0.5rem;
+  /* 8px */
+  font-size: 0.75rem;
+  /* 12px */
   color: white;
   font-weight: 700;
   text-decoration: none;
@@ -161,7 +180,6 @@ ul {
 
 .imgLinks a img:hover {
   filter: brightness(50%);
-
 }
 
 #rock,
@@ -171,11 +189,12 @@ ul {
 #artist-tracks {
   color: white;
   font-weight: 700;
-  padding-top: 50px;
+  padding-top: 3.125rem;
+  /* 50px */
 }
 
 .trackHover:hover {
-  background-color: black;
+  background-color: #3f516c;
   cursor: pointer;
 }
 
@@ -185,9 +204,12 @@ ul {
 
 #btnPlay {
   font-weight: 700;
-  width: 150px;
-  height: 50px;
-  border-radius: 50px;
+  width: 9.375rem;
+  /* 150px */
+  height: 3.125rem;
+  /* 50px */
+  border-radius: 3.125rem;
+  /* 50px */
 }
 
 .duration {
@@ -195,12 +217,14 @@ ul {
 }
 
 .mainButton {
-  border: 1px solid #fff !important;
-  border-radius: 20px !important;
-  height: 2.2em !important;
+  border: 1px solid #fff;
+  border-radius: 1.25rem;
+  /* 20px */
+  height: 2.2em;
   width: 7em;
   text-align: center;
-  padding: 0px 10px !important;
+  padding: 0px 0.625rem;
+  /* 10px */
 }
 
 .titleMain {
@@ -232,7 +256,8 @@ ul {
 }
 
 .mainPage img {
-  width: 200px;
+  width: 12.5rem;
+  /* 200px */
 }
 
 .mainPage {
@@ -240,22 +265,31 @@ ul {
 }
 
 .myAppG {
-  overflow: hidden;
-
   a {
     cursor: pointer;
   }
 }
 
 .songName,
-.songArtist {
+.songArtist,
+.songAlbum,
+.songDuration {
   color: white;
-  font-weight: 700;
   font-size: 1rem;
   margin: 0;
 }
 
 .songArtist {
   font-size: 0.8rem;
+}
+
+.songAlbum,
+.songDuration,
+.songArtist {
   color: rgb(160, 160, 160);
+}
+
+.headerPL {
+  border-bottom: 1px solid grey;
+  padding-bottom: 0.5rem;
 }

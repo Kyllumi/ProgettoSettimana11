@@ -2,13 +2,18 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { PlusCircle } from "react-bootstrap-icons";
-import { useDispatch } from 'react-redux';
-import { setSong } from '../store/action';
+import { useDispatch, useSelector } from 'react-redux';
+import { setSong, toggleFavTrack } from '../store/action';
 
 export default function AlbumPage() {
     const [album, setAlbum] = useState({});
     const { albumId } = useParams();
     const dispatch = useDispatch();
+    const favTracks = useSelector(state => state.favTrack);
+
+    const handleFavTrack = (track) => {
+        dispatch(toggleFavTrack(track));
+    }
 
     const options = {
         method: 'GET',
@@ -40,7 +45,7 @@ export default function AlbumPage() {
 
             <div className="row">
                 <div className="col-md-3 pt-5 text-center" id="img-container">
-                    {album.cover && <img src={album.cover} className="card-img img-fluid" alt="Album" />}
+                    {album.cover && <img src={album.cover_medium} className="card-img img-fluid" alt="Album" />}
                     <div className="mt-4 text-center">
                         {album.title && <p className="album-title">{album.title}</p>}
                     </div>
@@ -58,7 +63,7 @@ export default function AlbumPage() {
                                 <div className="row py-2 trackHover align-items-center py-2" key={track.id}>
                                     <a className="col-9 card-title trackHover py-2" style={{ color: 'white' }} onClick={() => dispatch(setSong(track))}>{track.title}</a>
                                     <a className="duration col" style={{ color: 'white' }}>{Math.floor(parseInt(track.duration) / 60)}:{parseInt(track.duration) % 60 < 10 ? "0" + (parseInt(track.duration) % 60) : parseInt(track.duration) % 60}</a>
-                                    <PlusCircle className='col-1 text-white myFavTrack' onClick={() => console.log('click')} />
+                                    <PlusCircle className={`col-1 myFavTrack ${favTracks.find(favTrack => favTrack.id === track.id) ? 'text-success' : 'text-white'}`} onClick={() => handleFavTrack(track)} />
                                 </div>
                             )) : <p>Loading...</p>}
                         </div>

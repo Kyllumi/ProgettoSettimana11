@@ -1,11 +1,18 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import {thunk} from 'redux-thunk';
+import { persistStore, persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
 import reducer from './reducer';
 
-
-const initialState = {
-    favSong: [],
+const persistConfig = {
+    key: 'root',
+    storage,
 }
 
-const store = createStore(reducer, initialState);
+const persistedReducer = persistReducer(persistConfig, reducer)
 
-export default store;
+const store = createStore(persistedReducer, applyMiddleware(thunk));
+
+let persistor = persistStore(store);
+
+export { store, persistor };

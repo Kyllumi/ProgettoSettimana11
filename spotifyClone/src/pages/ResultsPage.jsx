@@ -39,7 +39,7 @@ export default function Homepage() {
             <div className="row mt-5">
                 <h2 className="text-white ms-5 ps-1">Risultati della ricerca</h2>
 
-                <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks m-0 my-3" id="hipHopSection">
+                <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks m-0 my-3">
                     {data.map((item) => (
                         <div className="col text-center mb-3" key={item.id}>
                             <a className="pointer" onClick={() => navigate(`/album/${item.album.id}`)}>
